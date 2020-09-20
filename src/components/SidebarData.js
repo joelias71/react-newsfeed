@@ -12,42 +12,49 @@ export const SidebarData = [
         title: 'Inicio',
         path: '/',
         icon: <HomeIcon />,
-        cName: 'navbar-text'
+        cName: 'navbar-text',
+        value: 0
     },
     {
         title: 'Política',
         path: '/politic',
         icon: <AccountBalanceIcon />,
-        cName: 'navbar-text'
+        cName: 'navbar-text',
+        value: 1
     },
     {
         title: 'Internacionales',
         path: '/international',
         icon: <PublicIcon />,
-        cName: 'navbar-text'
+        cName: 'navbar-text',
+        value: 2
     },
     {
         title: 'Tecnología',
         path: '/technology',
         icon: <LaptopMacIcon />,
-        cName: 'navbar-text'
+        cName: 'navbar-text',
+        value: 3
     },
     {
         title: 'Espectáculos',
         path: '/entertainment',
         icon: <MovieIcon />,
-        cName: 'navbar-text'
+        cName: 'navbar-text',
+        value: 4
     },
     {
         title: 'Deportes',
         path: '/sport',
         icon: <SportsVolleyballIcon />,
-        cName: 'navbar-text'
+        cName: 'navbar-text',
+        value: 5
     },
     {
         title: 'Diseño',
         path: '/design',
         icon: <BrushIcon />,
-        cName: 'navbar-text'
+        cName: 'navbar-text',
+        value: 6
     }
 ]

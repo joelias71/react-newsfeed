@@ -1,10 +1,28 @@
 import React from 'react';
 import Navbar from './components/Navbar'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import { SidebarData } from './components/SidebarData'
+import NewsContainer from './container/NewsContainer'
 
 function App() {
   return (
     <div>
-      <Navbar />
+      <Router>
+        <Navbar />
+        <Switch>
+          {SidebarData.map((item,index) => {
+            return (
+              <Route exact path={item.path} key={index}>
+                <NewsContainer title={item.title} />
+              </Route>
+            )
+          })}
+          <Route exact path='/404' key='-1'>
+            <NewsContainer title='Error 404' />
+          </Route>
+          <Redirect to="/404" />
+        </Switch>
+      </Router>
     </div>
   );
 }
