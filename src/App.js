@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import { SidebarData } from './components/SidebarData'
 import NewsContainer from './container/NewsContainer'
+import Page from './components/Page'
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
           {SidebarData.map((item,index) => {
             return (
               <Route exact path={item.path} key={index}>
-                <NewsContainer title={item.title} />
+                <NewsContainer title={item.title} Component={Page} />
               </Route>
             )
           })}

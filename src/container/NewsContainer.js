@@ -1,25 +1,7 @@
 import React from 'react'
-import Card from '../components/Card'
-import './NewsContainer.css'
 
-function NewsContainer({title}) {
-    return (
-        <div className='news-container' >
-            <h1 className='news-container__title' >{title}</h1>
-            <div className='news-container__list' >
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-            </div>
-        </div>
-    )
+function NewsContainer({ title, Component }) {
+    return <Component title={title} />
 }
 
 export default NewsContainer
