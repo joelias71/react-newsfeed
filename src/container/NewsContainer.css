@@ -1,0 +1,23 @@
+.news-container__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.news-container__title {
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    margin-left: 2rem;
+    z-index: -1;
+}
+
+.news-container__title:before {
+    content: "";
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    width: 90px;
+    height: 9px;
+    background-color: var(--primary-color);
+}

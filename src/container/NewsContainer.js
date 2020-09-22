@@ -1,9 +1,23 @@
 import React from 'react'
+import Card from '../components/Card'
+import './NewsContainer.css'
 
 function NewsContainer({title}) {
     return (
-        <div>
-            <h1>{title}</h1>
+        <div className='news-container' >
+            <h1 className='news-container__title' >{title}</h1>
+            <div className='news-container__list' >
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+            </div>
         </div>
     )
 }

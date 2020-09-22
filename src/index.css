@@ -19,6 +19,7 @@ code {
   --color-white: #fff;
   --color-pink: #FC4B63;
   --color-gray: #f5f5f5;
+  --color-gary-imp: #ededed;
   --color-blue: #1DAFEC;
 
   --primary-color: var(--color-blue);

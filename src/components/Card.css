@@ -1,0 +1,40 @@
+.newsCard {
+    color: var(--font-color);
+    transition: transform 100ms;
+    display: flex;
+    margin: 10px;
+    width: 550px;
+    height: 150px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.newsCard:hover {
+    transform: scale(1.09);
+}
+
+.newsCard > img {
+    height: 140px;
+    width: 250px;
+    overflow: hidden;
+}
+
+.newsCard__info {
+    margin-top: -9px;
+    border-radius: 10px;
+    padding: 20px;
+    padding-top: 20px;
+    border: 1;
+}
+
+.newsCard__info > h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+  
+.newsCard__info > h4 {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
