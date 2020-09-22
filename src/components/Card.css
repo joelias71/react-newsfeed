@@ -7,10 +7,12 @@
     height: 150px;
     margin: 10px;
     padding: 10px;
+    border: 1px solid var(--color-gary-imp);
+    border-radius: 5px;
 }
 
 .newsCard:hover {
-    transform: scale(1.09);
+    transform: scale(1.07);
 }
 
 .newsCard > img {

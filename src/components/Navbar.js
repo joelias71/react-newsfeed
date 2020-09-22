@@ -4,6 +4,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import { SidebarData } from './SidebarData'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
+import SearchIcon from '@material-ui/icons/Search'
 
 function Navbar() {
 
@@ -17,6 +18,11 @@ function Navbar() {
                 <Link to='#' >
                     <MenuIcon className='navbar__menu-bars' onClick={showSidebar} />
                 </Link>
+                <h1>Newsfeed</h1>
+                <div className='navbar__center'>
+                    <input type='text' placeholder="Buscar"/>
+                    <SearchIcon />
+                </div>
             </div>
             <nav className={sidebar ? 'navbar-menu active' : 'navbar-menu'}>
                 <ul className='navbar-menu__items'>
