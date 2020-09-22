@@ -8,9 +8,16 @@ import SearchIcon from '@material-ui/icons/Search'
 
 function Navbar() {
 
+    const [input, setInput] = useState('')
     const [sidebar, setSidebar] = useState(false)
 
     const showSidebar = () => setSidebar(!sidebar)
+
+    const searchByEnter = e => {
+        if (e.key === 'Enter') {
+            console.log('Search');
+        }
+    }
 
     return (
         <>
@@ -20,7 +27,11 @@ function Navbar() {
                 </Link>
                 <h1>Newsfeed</h1>
                 <div className='navbar__center'>
-                    <input type='text' placeholder="Buscar"/>
+                    <input type='text' 
+                           placeholder="Buscar" 
+                           value={input} 
+                           onKeyDown={e => searchByEnter(e)}
+                           onChange={e => setInput(e.target.value)} />
                     <SearchIcon />
                 </div>
             </div>

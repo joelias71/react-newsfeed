@@ -7,7 +7,7 @@
     height: 150px;
     margin: 10px;
     padding: 10px;
-    border: 1px solid var(--color-gary-imp);
+    /*border: 1px solid var(--color-gary-imp);*/
     border-radius: 5px;
 }
 
