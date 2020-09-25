@@ -5,8 +5,10 @@ import { SidebarData } from './SidebarData'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search'
+import { connect } from 'react-redux'
+import { searchData, setTitle } from '../actions/actions'
 
-function Navbar() {
+function Navbar(props) {
 
     const [input, setInput] = useState('')
     const [sidebar, setSidebar] = useState(false)
@@ -14,8 +16,9 @@ function Navbar() {
     const showSidebar = () => setSidebar(!sidebar)
 
     const searchByEnter = e => {
-        if (e.key === 'Enter') {
-            console.log('Search');
+        if (e.key === 'Enter' && input.length > 2) {
+            props.searchData(input)
+            props.setTitle(`Búsqueda: ${input}`)
         }
     }
 
@@ -58,4 +61,16 @@ function Navbar() {
     )
 }
 
-export default Navbar
+const mapDispatchToProps = (dispatch) => {
+    return {
+        searchData: value => dispatch(searchData(value)),
+        setTitle: title => dispatch(setTitle(title))
+    }
+}
+
+const NavbarContainer = connect(
+    null,
+    mapDispatchToProps
+)(Navbar)
+
+export default NavbarContainer

@@ -3,14 +3,25 @@ import { getTodayDate } from '../util/date'
 
 export const SET_DATA_FROM_SERVICE = 'SET_DATA_FROM_SERVICE'
 export const SET_TITLE = 'SET_TITLE'
+export const SERVICE_ERROR = 'SERVICE_ERROR'
 
 export const fetchData = id => {
 
     const uri = id? `news/category/${id}` : `latest/${getTodayDate()}`
 
+    return dispatch => {
+        axios.get(uri)
+        .then(response => dispatch(setDataFromService(response)))
+        .catch(error => dispatch(setError(error)))
+    }
+}
+
+export const searchData = value => {
+
     return async dispatch => {
-        const response = await axios.get(uri)
-        dispatch(setDataFromService(response))
+        axios.get(`search/${value}`)
+        .then(response => dispatch(setDataFromService(response)))
+        .catch(error => dispatch(setError(error)))
     }
 }
 
@@ -28,6 +39,9 @@ export const setTitle = title => {
     }
 }
 
-//return fetchData(`news/category/${action.id}`)
-//return fetchData(`latest/${action.date}`)
-//return fetchData(`search/${action.value}`)
+export const setError = error => {
+    return {
+        type: SERVICE_ERROR,
+        error
+    }
+}
