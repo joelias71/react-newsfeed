@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import { SidebarData } from './components/SidebarData'
 import NewsContainer from './container/NewsContainer'
 import Page from './components/Page'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           </Route>
           <Redirect to="/404" />
         </Switch>
+        <Footer />
       </Router>
     </div>
   );

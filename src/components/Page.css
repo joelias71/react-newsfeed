@@ -1,3 +1,7 @@
+.news-container {
+    min-height: calc(100vh - 80px - 4rem)
+}
+
 .news-container__list {
     display: flex;
     flex-wrap: wrap;
@@ -30,12 +34,14 @@
     align-items: center;
     justify-content: center;
     font-size: 18px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .pagination > .active > a{
     background-color: var(--primary-color) ;
     border-color: var(--primary-color) ;
-    color: #fff;
+    color: var(--color-white);
 }
 
 .pagination > li > a{
