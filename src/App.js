@@ -14,7 +14,7 @@ function App() {
           {SidebarData.map((item,index) => {
             return (
               <Route exact path={item.path} key={index}>
-                <NewsContainer title={item.title} Component={Page} />
+                <NewsContainer title={item.title} Component={Page} id={item.value} />
               </Route>
             )
           })}

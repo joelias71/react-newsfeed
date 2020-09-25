@@ -25,7 +25,7 @@ function Navbar() {
                 <Link to='#' >
                     <MenuIcon className='navbar__menu-bars' onClick={showSidebar} />
                 </Link>
-                <h1>Newsfeed</h1>
+                <h1>News Room</h1>
                 <div className='navbar__center'>
                     <input type='text' 
                            placeholder="Buscar" 

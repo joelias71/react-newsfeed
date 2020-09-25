@@ -12,8 +12,7 @@ export const SidebarData = [
         title: 'Inicio',
         path: '/',
         icon: <HomeIcon />,
-        cName: 'navbar-text',
-        value: 0
+        cName: 'navbar-text'
     },
     {
         title: 'Política',
