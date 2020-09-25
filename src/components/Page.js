@@ -4,9 +4,8 @@ import './Page.css'
 import { connect } from 'react-redux'
 
 function Page(props) {
-    console.log(props.state.news)
-
-    const news = props.state.news.data.map(item => <Card key={item.news_id} properties={item} />)
+    
+    const news = props.state.news.data.map(item => <Card key={item.news_id} item={item} />)
 
     return (
         <div className='news-container' >

@@ -77,6 +77,7 @@
     left: -100%;
     transition: 850ms;
     color: var(--secondary-color);
+    z-index: 10;
 }
 
 .navbar-menu.active {
