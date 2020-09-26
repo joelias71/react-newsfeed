@@ -7,7 +7,10 @@ import { Link } from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search'
 import { connect } from 'react-redux'
 import { searchData, setTitle } from '../actions/actions'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
+toast.configure()
 function Navbar(props) {
 
     const [input, setInput] = useState('')
@@ -16,9 +19,19 @@ function Navbar(props) {
     const showSidebar = () => setSidebar(!sidebar)
 
     const searchByEnter = e => {
-        if (e.key === 'Enter' && input.length > 2) {
+        if (e.key === 'Enter') {
+            search()
+        }
+    }
+
+    const search = () => {
+        if(input.length > 2) {
             props.searchData(input)
             props.setTitle(`Búsqueda: ${input}`)
+        } else {
+            toast.info('Tienes que escribir al menos 3 caracteres', {
+                position: toast.POSITION.BOTTOM_RIGHT
+            })
         }
     }
 
@@ -35,7 +48,7 @@ function Navbar(props) {
                            value={input} 
                            onKeyDown={e => searchByEnter(e)}
                            onChange={e => setInput(e.target.value)} />
-                    <SearchIcon />
+                    <SearchIcon onClick={() => search()} style={{cursor: 'pointer'}} />
                 </div>
             </div>
             <nav className={sidebar ? 'navbar-menu active' : 'navbar-menu'}>
