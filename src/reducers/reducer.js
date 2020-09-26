@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import { SET_DATA_FROM_SERVICE, SET_TITLE, SERVICE_ERROR } from '../actions/actions'
 
-const news = (state = { title: 'Últimas noticias', data: [], error: null},  action) => {
+const news = (data = [],  action) => {
 
     if(action.type === SET_DATA_FROM_SERVICE) {
         //get the first 100 elements of the api, 
@@ -9,31 +9,30 @@ const news = (state = { title: 'Últimas noticias', data: [], error: null},  act
         //elements and gets slow
         const list = action.data.data.slice(0, 100)
 
-        return {
-            ...state,
-            data: list,
-            error: (list.length === 0)?'No se encontraron datos':null
-        }
+        return list
     }
 
+    return data
+}
+
+const title = (title = 'Últimas noticias', action) => {
     if(action.type === SET_TITLE) {
-        return {
-            ...state,
-            title: action.title
-        }
+        return action.title
     }
 
+    return title
+}
+
+const error = (error = null, action) => {
     if(action.type === SERVICE_ERROR) {
-        return {
-            ...state,
-            data: [],
-            error: action.error
-        }
+        return action.error
     }
 
-    return state
+    return error
 }
 
 export default combineReducers({
-    news
+    news,
+    title,
+    error
 })

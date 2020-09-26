@@ -46,9 +46,9 @@ function Page({data,error,title}) {
 
 const mapStateToProps = (state) => {
     return {
-        data: state.news.data,
-        error: state.news.error,
-        title: state.news.title
+        data: state.news,
+        error: state.error,
+        title: state.title
     }
 }
 
