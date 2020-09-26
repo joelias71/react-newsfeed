@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { SET_DATA_FROM_SERVICE, SET_TITLE, SERVICE_ERROR } from '../actions/actions'
+import { SET_DATA_FROM_SERVICE, SET_TITLE, SERVICE_ERROR, CLEANUP } from '../actions/actions'
 
 const news = (data = [],  action) => {
 
@@ -11,6 +11,8 @@ const news = (data = [],  action) => {
 
         return list
     }
+
+    if(action.type === CLEANUP) return []
 
     return data
 }
