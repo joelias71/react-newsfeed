@@ -19,8 +19,8 @@ function App() {
               </Route>
             )
           })}
-          <Route exact path='/404' key='-1'>
-            <NewsContainer title='Error 404' />
+          <Route exact path='/404' key='fourOhFour'>
+            <NewsContainer title='Error 404' Component={Page} id='404' />
           </Route>
           <Redirect to="/404" />
         </Switch>
