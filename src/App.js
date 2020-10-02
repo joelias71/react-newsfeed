@@ -14,12 +14,12 @@ function App() {
         <Switch>
           {SidebarData.map((item,index) => {
             return (
-              <Route exact path={`react-newsfeed/${item.path}`} key={index}>
+              <Route exact path={`/react-newsfeed/${item.path}`} key={index}>
                 <NewsContainer title={item.title} Component={Page} id={item.value} />
               </Route>
             )
           })}
-          <Route exact path='react-newsfeed/404' key='fourOhFour'>
+          <Route exact path='/react-newsfeed/404' key='fourOhFour'>
             <NewsContainer title='Error 404' Component={Page} id='404' />
           </Route>
           <Redirect to="/404" />
