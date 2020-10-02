@@ -1,6 +1,6 @@
 {
-  "homepage": "http://joelias71.github.io/reactjs-newsfeed",
-  "name": "newsfeed",
+  "homepage": "http://joelias71.github.io/react-newsfeed",
+  "name": "react-newsfeed",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
