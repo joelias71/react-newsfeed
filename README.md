@@ -22,7 +22,7 @@ Application that get news from https://canillitapp.com/
 You need to clone the repo and install the dependencies before start:
 
 ```sh
-$ cd reactjs-newsfeed
+$ cd react-newsfeed
 $ sudo npm install
 ```
 ## Run the Application
@@ -35,7 +35,7 @@ $ npm start
 
 You can see the application running here:  
 
-https://joelias71.github.io/reactjs-newsfeed
+https://joelias71.github.io/react-newsfeed
 
 ## Learn More
 
