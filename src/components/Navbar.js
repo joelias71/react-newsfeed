@@ -5,14 +5,14 @@ import { SidebarData } from './SidebarData'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search'
-import { connect } from 'react-redux'
-import { searchData, setTitle } from '../actions/actions'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { useHistory } from "react-router-dom";
 
 toast.configure()
 function Navbar(props) {
 
+    const history = useHistory();
     const [input, setInput] = useState('')
     const [sidebar, setSidebar] = useState(false)
 
@@ -26,8 +26,7 @@ function Navbar(props) {
 
     const search = () => {
         if(input.length > 2) {
-            props.searchData(input)
-            props.setTitle(`Búsqueda: ${input}`)
+            history.push(`/search/${input}`)
         } else {
             toast.info('Tienes que escribir al menos 3 caracteres', {
                 position: toast.POSITION.BOTTOM_RIGHT
@@ -74,16 +73,4 @@ function Navbar(props) {
     )
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        searchData: value => dispatch(searchData(value)),
-        setTitle: title => dispatch(setTitle(title))
-    }
-}
-
-const NavbarContainer = connect(
-    null,
-    mapDispatchToProps
-)(Navbar)
-
-export default NavbarContainer
+export default Navbar

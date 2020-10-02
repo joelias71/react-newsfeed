@@ -8,18 +8,18 @@ export const CLEANUP = 'CLEANUP'
 
 export const fetchData = id => {
 
-    cleanup()
-
     if(id !== '404') {
         const uri = id? `news/category/${id}` : `latest/${getTodayDate()}`
 
         return dispatch => {
+            dispatch(cleanup())
             axios.get(uri)
             .then(response => dispatch(setDataFromService(response)))
             .catch(error => dispatch(setError(error)))
         }
     } else {
         return dispatch => {
+            dispatch(cleanup())
             dispatch(setError('Ruta no encontrada'))
         }
     }
@@ -27,9 +27,8 @@ export const fetchData = id => {
 
 export const searchData = value => {
 
-    cleanup()
-
     return dispatch => {
+        dispatch(cleanup())
         axios.get(`search/${value}`)
         .then(response => dispatch(setDataFromService(response)))
         .catch(error => dispatch(setError(error)))

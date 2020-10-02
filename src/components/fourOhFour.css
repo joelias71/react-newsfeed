@@ -1,0 +1,12 @@
+.fourOhFour-container {
+    min-height: calc(100vh - 80px - 4rem)
+}
+
+.fourOhFour-container > * {
+    text-align: center;
+}
+
+.fourOhFour-container > h1 {
+    font-size: 5em;
+    line-height: calc(100vh - 80px - 4rem);
+}
