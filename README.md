@@ -33,9 +33,9 @@ In the project directory, you can run:
 $ npm start
 ```
 
-You can see the application running here:  
+<!--You can see the application running here:  -->
 
-https://joelias71.github.io/react-newsfeed
+<!--https://joelias71.github.io/react-newsfeed-->
 
 ## Learn More
 
